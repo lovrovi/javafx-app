@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="730.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kontakti.controller.RacuniController">
+    <children>
+        <SplitPane dividerPositions="0.12299465240641712" layoutX="42.0" layoutY="40.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="398.0" prefWidth="79.0">
+                    <children>
+                        <Label layoutX="5.0" layoutY="14.0" text="Admin panel" underline="true">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Label>
+                        <Separator layoutX="-55.0" layoutY="65.0" prefHeight="0.0" prefWidth="148.0" />
+                        <Button fx:id="btnProizvodi" layoutX="12.0" layoutY="118.0" mnemonicParsing="false" onAction="#goToProizvodi" text="Proizvodi" />
+                        <Button fx:id="btn_zaposlenici" layoutX="7.0" layoutY="173.0" mnemonicParsing="false" onAction="#goToZaposlenici" text="Zaposlenici" />
+                        <Button fx:id="btn_racuni" layoutX="21.0" layoutY="231.0" mnemonicParsing="false" text="Račun" />
+                        <Label alignment="CENTER" layoutX="18.0" layoutY="34.0" text="Proizvodi">
+                            <font>
+                                <Font size="13.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="398.0" prefWidth="500.0">
+                    <children>
+                        <TableView fx:id="tblRacuni" onMouseClicked="#selectRow" prefHeight="400.0" prefWidth="359.0">
+                            <columns>
+                                <TableColumn fx:id="col_datum" prefWidth="87.60004043579102" text="Datum" />
+                                <TableColumn fx:id="col_ime" prefWidth="149.0" text="Zaposlenik" />
+                                <TableColumn fx:id="col_ukupno" prefWidth="120.79997558593749" text="Ukupna cijena" />
+                            </columns>
+                        </TableView>
+                  <TableView fx:id="tblDetails" layoutX="375.0" layoutY="80.0" prefHeight="238.0" prefWidth="240.0">
+                    <columns>
+                      <TableColumn fx:id="col_proizvod" prefWidth="115.4000244140625" text="Proizvod" />
+                      <TableColumn fx:id="col_cijena" prefWidth="55.39996337890625" text="Cijena" />
+                        <TableColumn fx:id="col_kolicina" prefWidth="68.60009765625" text="Kolicina" />
+                    </columns>
+                  </TableView>
+                  <Label layoutX="465.0" layoutY="33.0" text="Detalji računa" />
+                    </children></AnchorPane>
+            </items>
+        </SplitPane>
+    </children>
+    <stylesheets>
+        <URL value="@zaposlenici.css" />
+    </stylesheets>
+</AnchorPane>

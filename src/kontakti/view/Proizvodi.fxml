@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kontakti.controller.ProizvodiController">
+   <children>
+      <SplitPane dividerPositions="0.14660493827160495" layoutX="42.0" layoutY="40.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <Label layoutX="6.0" layoutY="14.0" text="Admin panel" underline="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Separator layoutX="-55.0" layoutY="65.0" prefHeight="0.0" prefWidth="148.0" />
+                  <Button fx:id="btnProizvodi" alignment="CENTER" layoutX="12.0" layoutY="118.0" mnemonicParsing="false" text="Proizvodi" textAlignment="CENTER" />
+                  <Button fx:id="btn_zaposlenici" alignment="CENTER" layoutX="7.0" layoutY="173.0" mnemonicParsing="false" onAction="#goToZaposlenici" text="Zaposlenici" textAlignment="CENTER" />
+                  <Button fx:id="btn_racuni" alignment="CENTER" layoutX="21.0" layoutY="231.0" mnemonicParsing="false" onAction="#goToRacuni" text="Račun" textAlignment="CENTER" />
+                  <Label alignment="CENTER" layoutX="18.0" layoutY="34.0" text="Proizvodi">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <TableView fx:id="tblProizvodi" onMouseClicked="#selectRow" prefHeight="398.0" prefWidth="367.0">
+                    <columns>
+                      <TableColumn fx:id="col_id" prefWidth="22.4000244140625" text="Id" />
+                      <TableColumn fx:id="col_naziv" prefWidth="136.8000259399414" text="Naziv" />
+                        <TableColumn fx:id="col_cijena" prefWidth="44.79998779296875" text="Cijena" />
+                        <TableColumn fx:id="col_vrsta" prefWidth="162.199951171875" text="Vrsta" />
+                    </columns>
+                  </TableView>
+                  <TextField fx:id="txt_naziv" layoutX="382.0" layoutY="80.0" />
+                  <Label layoutX="382.0" layoutY="55.0" text="Naziv" />
+                  <TextField fx:id="txt_cijena" layoutX="381.0" layoutY="139.0" />
+                  <Label layoutX="381.0" layoutY="114.0" text="Cijena" />
+                  <Button alignment="CENTER" layoutX="386.0" layoutY="257.0" mnemonicParsing="false" onAction="#create" text="Create" textAlignment="CENTER" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" layoutX="461.0" layoutY="257.0" mnemonicParsing="false" onAction="#update" text="Update" textAlignment="CENTER" />
+                  <Button alignment="CENTER" layoutX="386.0" layoutY="313.0" mnemonicParsing="false" onAction="#delete" text="Delete" textAlignment="CENTER" />
+                  <Label layoutX="384.0" layoutY="7.0" text="ID:" />
+                  <TextField fx:id="txt_id" disable="true" layoutX="381.0" layoutY="25.0" />
+                  <Label layoutX="383.0" layoutY="181.0" text="Vrsta proizvoda" />
+                  <ChoiceBox fx:id="select_vrsta" layoutX="380.0" layoutY="205.0" prefWidth="150.0" />
+                  <Button layoutX="467.0" layoutY="313.0" mnemonicParsing="false" onAction="#clear" text="Clear" />
+               </children></AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+    <stylesheets>
+        <URL value="@zaposlenici.css" />
+    </stylesheets>
+</AnchorPane>

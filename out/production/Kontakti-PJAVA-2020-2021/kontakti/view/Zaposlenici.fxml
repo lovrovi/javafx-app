@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="770.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kontakti.controller.ZaposleniciController">
+    <children>
+        <SplitPane dividerPositions="0.11904761904761904" layoutX="42.0" layoutY="40.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                    <children>
+                        <Label layoutX="5.0" layoutY="14.0" text="Admin panel" underline="true">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Label>
+                        <Separator layoutX="-55.0" layoutY="65.0" prefHeight="0.0" prefWidth="148.0" />
+                        <Button fx:id="btnProizvodi" layoutX="12.0" layoutY="118.0" mnemonicParsing="false" onAction="#goToProizvodi" text="Proizvodi" />
+                        <Button fx:id="btn_zaposlenici" layoutX="7.0" layoutY="173.0" mnemonicParsing="false" text="Zaposlenici" />
+                        <Button fx:id="btn_racuni" layoutX="21.0" layoutY="231.0" mnemonicParsing="false" onAction="#goToRacuni" text="Račun" />
+                        <Label alignment="CENTER" layoutX="12.0" layoutY="34.0" text="Zaposlenici">
+                            <font>
+                                <Font size="13.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                    <children>
+                        <TableView fx:id="tbl_zaposlenici" onMouseClicked="#selectRow" prefHeight="400.0" prefWidth="481.0">
+                            <columns>
+                        <TableColumn fx:id="col_id" prefWidth="27.800017535686493" text="ID" />
+                                <TableColumn fx:id="col_ime" prefWidth="121.60000991821289" text="Ime" />
+                                <TableColumn fx:id="col_prezime" prefWidth="141.59996032714844" text="Prezime" />
+                                <TableColumn fx:id="col_lozinka" prefWidth="128.20004272460938" text="Lozinka" />
+                        <TableColumn fx:id="col_isAdmin" prefWidth="60.5999755859375" text="IsAdmin" />
+                            </columns>
+                        </TableView>
+                        <TextField fx:id="txt_ime" layoutX="498.0" layoutY="83.0" />
+                        <Label layoutX="498.0" layoutY="58.0" text="Ime" />
+                        <TextField fx:id="txt_prezime" layoutX="498.0" layoutY="153.0" />
+                        <Label layoutX="498.0" layoutY="128.0" text="Prezime" />
+                        <TextField fx:id="txt_lozinka" layoutX="498.0" layoutY="223.0" />
+                        <Label layoutX="498.0" layoutY="198.0" text="Lozinka" />
+                        <Button alignment="CENTER" layoutX="487.0" layoutY="313.0" mnemonicParsing="false" onAction="#createZaposlenik" text="Create" textAlignment="CENTER" />
+                        <Button alignment="CENTER" layoutX="607.0" layoutY="313.0" mnemonicParsing="false" onAction="#deleteZaposlenik" text="Delete" textAlignment="CENTER" />
+                        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="544.0" layoutY="313.0" mnemonicParsing="false" onAction="#updateZaposlenik" text="Update" textAlignment="CENTER" />
+                  <Label layoutX="498.0" layoutY="10.0" text="ID" />
+                  <TextField fx:id="txt_id" disable="true" editable="false" layoutX="498.0" layoutY="28.0" />
+                  <CheckBox fx:id="check_isAdmin" layoutX="535.0" layoutY="276.0" mnemonicParsing="false" text="IsAdmin" />
+                  <Button layoutX="546.0" layoutY="359.0" mnemonicParsing="false" onAction="#clear" text="Clear" />
+                    </children></AnchorPane>
+            </items>
+        </SplitPane>
+    </children>
+    <stylesheets>
+        <URL value="@zaposlenici.css" />
+    </stylesheets>
+</AnchorPane>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="750.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kontakti.controller.BlagajnaController">
+    <children>
+        <TableView fx:id="tblProizvodi" onMouseClicked="#selectRow" prefHeight="400.0" prefWidth="346.0">
+            <columns>
+                <TableColumn fx:id="col_id" prefWidth="22.4000244140625" text="Id" />
+                <TableColumn fx:id="col_naziv" prefWidth="123.20001220703125" text="Proizvod" />
+                <TableColumn fx:id="col_cijena" prefWidth="54.399993896484375" text="Cijena" />
+                <TableColumn fx:id="col_vrsta" prefWidth="142.39999389648438" text="Vrsta" />
+            </columns>
+        </TableView>
+        <TextField fx:id="txt_naziv" layoutX="356.0" layoutY="87.0" />
+        <Label layoutX="356.0" layoutY="62.0" text="Naziv" />
+        <TextField fx:id="txt_kolicina" layoutX="356.0" layoutY="145.0" />
+        <Label layoutX="356.0" layoutY="120.0" text="Dodaj Kolicinu" />
+        <TextField fx:id="txt_cijena" disable="true" layoutX="355.0" layoutY="204.0" />
+        <Label layoutX="355.0" layoutY="179.0" text="Cijena" />
+        <Button alignment="CENTER" layoutX="375.0" layoutY="263.0" mnemonicParsing="false" onAction="#addToRacun" text="Add" textAlignment="CENTER" />
+        <Label layoutX="358.0" layoutY="14.0" text="ID:" />
+        <TextField fx:id="txt_id" disable="true" layoutX="355.0" layoutY="32.0" />
+      <TableView fx:id="tblRacun" layoutX="519.0" prefHeight="302.0" prefWidth="230.0">
+        <columns>
+            <TableColumn fx:id="col_racunId" minWidth="0.0" prefWidth="23.0" text="Id" />
+          <TableColumn fx:id="col_racunPro" prefWidth="106.20001220703125" text="Proizvod" />
+          <TableColumn fx:id="col_racunKol" prefWidth="54.5999755859375" text="Kolicina" />
+            <TableColumn fx:id="col_racunCij" prefWidth="45.600012207031256" text="Cijena" />
+        </columns>
+      </TableView>
+      <TextField fx:id="txt_ukupno" disable="true" layoutX="560.0" layoutY="346.0" />
+      <Label layoutX="560.0" layoutY="319.0" text="Ukupno:" />
+      <Button layoutX="443.0" layoutY="263.0" mnemonicParsing="false" onAction="#create" text="Create" />
+      <Button layoutX="407.0" layoutY="315.0" mnemonicParsing="false" onAction="#clear" text="Clear" />
+    </children>
+    <stylesheets>
+        <URL value="@Login.css" />
+    </stylesheets>
+</AnchorPane>
